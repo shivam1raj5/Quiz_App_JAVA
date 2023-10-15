@@ -1,3 +1,9 @@
 <resources>
-    <string name="app_name">Quiz_App_JAVA</string>
+    <string name="app_name">quiz_app</string>
+    <string name="app">Quiz</string>
+    <string name="title">Title</string>
+    <string name="book_maks">Bookmarks</string>
+    <string name="play_quiz">Start quiz</string>
+    <string name="sets">Sets</string>
+    <string name="_1">1</string>
 </resources>
