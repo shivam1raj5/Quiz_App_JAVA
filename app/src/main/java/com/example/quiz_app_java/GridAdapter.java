@@ -36,7 +36,7 @@ public class GridAdapter extends BaseAdapter {
         }else {
             view = convertView;
         }
-        ((TextView)view.findViewById(R.id.textview)).setText(String.valueOf(position));
+        ((TextView)view.findViewById(R.id.question)).setText(String.valueOf(position));
 
         return view;
     }

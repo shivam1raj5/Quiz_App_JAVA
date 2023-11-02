@@ -6,4 +6,10 @@
     <string name="play_quiz">Start quiz</string>
     <string name="sets">Sets</string>
     <string name="_1">1</string>
+    <string name="marks_5_10" />
+    <string name="textview">TextView</string>
+    <string name="next" />
+    <string name="share" />
+    <string name="button">Button</string>
+    <string name="todo">TODO</string>
 </resources>
