@@ -136,6 +136,8 @@
         android:backgroundTint="#848484"
         android:contentDescription="@string/todo"
         android:text="Next"
+        android:enabled="false"
+        android:alpha="0.7"
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

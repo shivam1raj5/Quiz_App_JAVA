@@ -1,5 +1,6 @@
 package com.example.quiz_app_java;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,6 +37,15 @@ public class GridAdapter extends BaseAdapter {
         }else {
             view = convertView;
         }
+
+        view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent questionIntent = new Intent(parent.getContext(),QuestionsActivity.class);
+                parent.getContext().startActivity(questionIntent);
+            }
+        });
+
         ((TextView)view.findViewById(R.id.question)).setText(String.valueOf(position));
 
         return view;
