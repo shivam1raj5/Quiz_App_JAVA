@@ -26,7 +26,7 @@ public class SetsActivity extends AppCompatActivity {
         getSupportActionBar().setTitle(getIntent().getStringExtra("title"));
 
         GridView gridview = findViewById(R.id.gridview);
-        GridAdapter adapter = new GridAdapter(16);
+        GridAdapter adapter = new GridAdapter(getIntent().getIntExtra("sets", 0), getIntent().getStringExtra("title"));
         gridview.setAdapter(adapter);
     }
 

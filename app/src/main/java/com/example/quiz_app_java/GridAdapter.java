@@ -9,9 +9,11 @@ import android.widget.TextView;
 
 public class GridAdapter extends BaseAdapter {
     private int sets=0;
+    private String category;
 
-    public GridAdapter(int sets) {
+    public GridAdapter(int sets, String category) {
         this.sets = sets;
+        this.category = category;
     }
 
     @Override
@@ -42,6 +44,8 @@ public class GridAdapter extends BaseAdapter {
             @Override
             public void onClick(View v) {
                 Intent questionIntent = new Intent(parent.getContext(),QuestionsActivity.class);
+                questionIntent.putExtra("category", category);
+                questionIntent.putExtra("setNo", position+1);
                 parent.getContext().startActivity(questionIntent);
             }
         });

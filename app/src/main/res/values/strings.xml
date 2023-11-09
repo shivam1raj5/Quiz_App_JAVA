@@ -12,4 +12,8 @@
     <string name="share" />
     <string name="button">Button</string>
     <string name="todo">TODO</string>
+    <string name="score">Score</string>
+    <string name="s5">5</string>
+    <string name="out_of_10">OUT OF 10</string>
+    <string name="done">DONE</string>
 </resources>

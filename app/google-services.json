@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "85516952999",
+    "project_id": "quiappjava",
+    "storage_bucket": "quiappjava.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:85516952999:android:0df1b1d4da11ddaad24282",
+        "android_client_info": {
+          "package_name": "com.example.quiz_app_java"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBKSGp4_CW4aoeJG4Cii8twDm6WbBKyNDM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
