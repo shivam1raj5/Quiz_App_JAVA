@@ -1,16 +1,25 @@
 package com.example.quiz_app_java;
 
+import static com.example.quiz_app_java.R.id.toolbar;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+//import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.widget.Toolbar;
+//import android.widget.LinearLayout;
+
+import androidx.appcompat.widget.Toolbar;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Objects;
 
 public class BookmarkActivity extends AppCompatActivity {
 
-    private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,11 +28,32 @@ public class BookmarkActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
 
         setSupportActionBar(toolbar);
-        getSupportActionBar().setTitle("Bookmarks");
+        Objects.requireNonNull(getSupportActionBar()).setTitle("Bookmarks");
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        recyclerView = findViewById(R.id.rv_bookmarks);
+        RecyclerView recyclerView = findViewById(R.id.rv_bookmarks);
+
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        layoutManager.setOrientation(RecyclerView.VERTICAL);
+
+        recyclerView.setLayoutManager(layoutManager);
+
+        List<QuestionModel> list = new ArrayList<>();
+        list.add(new QuestionModel("what is your name?","","","","","Shivamanu",0));
+        list.add(new QuestionModel("what is your name?","","","","","Shivamanu",0));
+        list.add(new QuestionModel("what is your name?","","","","","Shivamanu",0));
+        list.add(new QuestionModel("what is your name?","","","","","Shivamanu",0));
+        list.add(new QuestionModel("what is your name?","","","","","Shivamanu",0));
+        list.add(new QuestionModel("what is your name?","","","","","Shivamanu",0));
+        list.add(new QuestionModel("what is your name?","","","","","Shivamanu",0));
+        list.add(new QuestionModel("what is your name?","","","","","Shivamanu",0));
+
+
+        BookmarksAdapter adapter = new BookmarksAdapter(list);
+        recyclerView.setAdapter(adapter);
     }
+
+
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
@@ -34,4 +64,6 @@ public class BookmarkActivity extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
 }

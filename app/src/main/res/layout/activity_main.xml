@@ -38,12 +38,12 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="40dp"
         android:text="@string/play_quiz"
-        app:layout_constraintBottom_toTopOf="@+id/bookBtn"
+        app:layout_constraintBottom_toTopOf="@+id/bookmarks_btn"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/bookBtn"
+        android:id="@+id/bookmarks_btn"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="64dp"
