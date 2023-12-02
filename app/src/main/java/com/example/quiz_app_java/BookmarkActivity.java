@@ -43,7 +43,7 @@ public class BookmarkActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bookmark);
-         Toolbar toolbar =  findViewById(R.id.toolbar);
+         Toolbar toolbar =  findViewById(R.id.toolBar);
 
         ActionBar actionBar = getSupportActionBar();
         //setSupportActionBar(toolbar);

@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.Dialog;
-import android.content.Context;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.LinearLayout;
@@ -45,8 +44,8 @@ public class CategoriesActivity extends AppCompatActivity {
         loadingDialog = new Dialog(this);
         loadingDialog.setContentView(R.layout.loading);
         loadingDialog.getWindow().setBackgroundDrawable(getDrawable(R.drawable.rounded_corners));
-        loadingDialog.getWindow().setLayout(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT);
-         loadingDialog.setCancelable(false);
+        loadingDialog.getWindow().setLayout(LinearLayout.LayoutParams.WRAP_CONTENT, LinearLayout.LayoutParams.WRAP_CONTENT);
+        loadingDialog.setCancelable(false);
 
         RecyclerView recyclerView = findViewById(R.id.recycleView);
 
@@ -55,17 +54,20 @@ public class CategoriesActivity extends AppCompatActivity {
 
         recyclerView.setLayoutManager(layoutManager);
 
-       list = new ArrayList<>();
+        list = new ArrayList<>();
 
         CategoryAdapter adapter = new CategoryAdapter(list);
         recyclerView.setAdapter(adapter);
 
-      loadingDialog.show();
+        loadingDialog.show();
         myRef.child("Categories").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for(DataSnapshot  snapshot1: snapshot.getChildren()){
-                    list.add(snapshot1.getValue(CategoryModel.class));
+                for (DataSnapshot snapshot1 : snapshot.getChildren()) {
+                    CategoryModel categoryModel = snapshot1.getValue(CategoryModel.class);
+                    if (categoryModel != null) {
+                        list.add(categoryModel);
+                    }
                 }
                 adapter.notifyDataSetChanged();
                 loadingDialog.dismiss();
@@ -73,18 +75,16 @@ public class CategoriesActivity extends AppCompatActivity {
 
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-                Toast.makeText(CategoriesActivity.this,  error.getMessage(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(CategoriesActivity.this, error.getMessage(), Toast.LENGTH_SHORT).show();
                 loadingDialog.dismiss();
                 finish();
             }
         });
-
     }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-
-        if(item.getItemId() == android.R.id.home){
+        if (item.getItemId() == android.R.id.home) {
             finish();
         }
         return super.onOptionsItemSelected(item);
