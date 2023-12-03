@@ -10,9 +10,6 @@ import android.widget.GridView;
 
 import java.util.List;
 
-//import com.google.android.gms.ads.AdRequest;
-//import com.google.android.gms.ads.AdView;
-//import com.google.android.gms.ads.interstitial.InterstitialAd;
 
 public class SetsActivity extends AppCompatActivity {
 
@@ -27,7 +24,6 @@ public class SetsActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-//        loadAds();
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle(getIntent().getStringExtra("title"));
@@ -49,10 +45,4 @@ public class SetsActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-//    private void loadAds(){
-//        AdView mAdView = findViewById(R.id.adView);
-//        AdRequest adRequest = new AdRequest.Builder().build();
-//        mAdView.loadAd(adRequest);
-//
-//    }
 }

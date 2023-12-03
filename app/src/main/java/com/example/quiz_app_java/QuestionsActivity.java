@@ -1,8 +1,6 @@
 package com.example.quiz_app_java;
 
-import androidx.annotation.ColorInt;
 import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -22,8 +20,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-//import com.google.android.gms.ads.AdRequest;
-//import com.google.android.gms.ads.AdView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -33,7 +29,6 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
-import org.w3c.dom.Text;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -115,16 +110,6 @@ public class QuestionsActivity extends AppCompatActivity {
         loadingDialog.getWindow().setLayout(LinearLayout.LayoutParams.WRAP_CONTENT,LinearLayout.LayoutParams.WRAP_CONTENT);
         loadingDialog.setCancelable(false);
 
-
-
-//        for (int i = 0;i < 4; i++){
-//            optionsContainer.getChildAt(i).setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//                    checkAnswer((Button) v);
-//                }
-//            });
-//        }
 
 
         list = new ArrayList<>();
@@ -299,14 +284,14 @@ public class QuestionsActivity extends AppCompatActivity {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 selectedoption.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#4CAF50")));
             }
-//            selectedoption.setBackgroundColor(Color.parseColor("#FF76FF03"));
+
         }
         else{
             ///incorrect
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 selectedoption.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#ff0000")));
             }
-//            selectedoption.setBackgroundColor(Color.parseColor("#ff0000"));
+
             Button correctoption = (Button) optionsContainer.findViewWithTag(list.get(position).getAnswer());
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 correctoption.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#4CAF50")));
@@ -317,11 +302,6 @@ public class QuestionsActivity extends AppCompatActivity {
     private void enableoption(boolean enable){
         for (int i = 0;i < 4; i++){
             optionsContainer.getChildAt(i).setEnabled(enable);
-//            if (enable){
-//                optionsContainer.getChildAt(i).setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#8A8484")));
-////                optionsContainer.getChildAt(i).setBackgroundColor(Color.parseColor("#8A8484"));
-//
-//            }
         }
 
     }
@@ -358,9 +338,4 @@ public class QuestionsActivity extends AppCompatActivity {
         editor.commit();
     }
 
-//    private void loadAds(){
-//        AdView mAdView = findViewById(R.id.adView);
-//        AdRequest adRequest = new AdRequest.Builder().build();
-//        mAdView.loadAd(adRequest);
-//    }
 }

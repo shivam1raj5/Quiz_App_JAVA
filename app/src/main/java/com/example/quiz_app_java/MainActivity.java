@@ -7,13 +7,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-//import com.google.android.gms.ads.AdRequest;
-//import com.google.android.gms.ads.AdView;
-//import com.google.android.gms.ads.MobileAds;
-
 public class MainActivity extends AppCompatActivity {
 
-    private Button startBtn,bookmarkBtn;
+    private Button startBtn,bookmarkBtn,adminBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,10 +18,8 @@ public class MainActivity extends AppCompatActivity {
 
         startBtn = findViewById(R.id.start_btn);
         bookmarkBtn = findViewById(R.id.bookmarks_btn);
+        adminBtn = findViewById(R.id.admin_btn);
 
-//        MobileAds.initialize(this);
-
-//        loadAds();
 
         startBtn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,11 +36,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(bookmarksIntent);
             }
         });
+        adminBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent bookmarksIntent = new Intent(MainActivity.this, com.example.quiz_app_java.MainActivityAdmin.class);
+                startActivity(bookmarksIntent);
+            }
+        });
     }
 
-//    private void loadAds(){
-//        AdView mAdView = findViewById(R.id.adView);
-//        AdRequest adRequest = new AdRequest.Builder().build();
-//        mAdView.loadAd(adRequest);
-//    }
 }

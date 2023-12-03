@@ -15,8 +15,22 @@
         android:theme="@style/Theme.Quiz_App_JAVA"
         tools:targetApi="31">
         <activity
+            android:name=".SetsActivityAdmin"
+            android:exported="true" />
+        <activity
+            android:name=".QuestionsActivityAdmin"
+            android:exported="true" />
+        <activity
+            android:name=".MainActivityAdmin"
+            android:exported="true" />
+        <activity
+            android:name=".CategoryActivityAdmin"
+            android:exported="true" />
+        <activity
+            android:name=".AddQuestionActivity"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
-
             android:exported="true" />
         <activity
             android:name=".BookmarkActivity"

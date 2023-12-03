@@ -8,9 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
-//import com.google.android.gms.ads.AdRequest;
-//import com.google.android.gms.ads.AdView;
-
 public class ScoreActivity extends AppCompatActivity {
     private TextView scored,total;
     private Button doneBtn;
@@ -40,9 +37,4 @@ public class ScoreActivity extends AppCompatActivity {
         });
     }
 
-//    private void loadAds(){
-//        AdView mAdView = findViewById(R.id.adView);
-//        AdRequest adRequest = new AdRequest.Builder().build();
-//        mAdView.loadAd(adRequest);
-//    }
 }
