@@ -13,7 +13,7 @@ import java.util.List;
 
 public class BookmarksAdapter extends RecyclerView.Adapter<BookmarksAdapter.Viewholder> {
 
-    private final List<QuestionModel> list;
+    private List<QuestionModel> list;
 
     public BookmarksAdapter(List<QuestionModel> list) {
         this.list = list;
@@ -22,14 +22,15 @@ public class BookmarksAdapter extends RecyclerView.Adapter<BookmarksAdapter.View
     @NonNull
     @Override
     public Viewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.bookmark_item,parent,
-                false);
-          return new Viewholder(view);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.bookmark_item,parent,false);
+
+        return new Viewholder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull Viewholder holder, int position) {
-         holder.setData(list.get(position).getQuestion(),list.get(position).getCorrectANS(), position);
+        holder.setData(list.get(position).getQuestion(),list.get(position).getAnswer(),position);
+
     }
 
     @Override
@@ -37,13 +38,14 @@ public class BookmarksAdapter extends RecyclerView.Adapter<BookmarksAdapter.View
         return list.size();
     }
 
-    class  Viewholder extends RecyclerView.ViewHolder{
-        private final ImageButton deleteBtn;
+    class Viewholder extends RecyclerView.ViewHolder{
 
-        private final TextView  question;
-        private final TextView answer;
-        public Viewholder(@NonNull View itemView){
+        private ImageButton deleteBtn;
+        private TextView question,answer;
+
+        public Viewholder(@NonNull View itemView) {
             super(itemView);
+
             question = itemView.findViewById(R.id.question);
             answer = itemView.findViewById(R.id.answer);
             deleteBtn = itemView.findViewById(R.id.delete_btn);
@@ -59,8 +61,12 @@ public class BookmarksAdapter extends RecyclerView.Adapter<BookmarksAdapter.View
                     list.remove(position);
                     notifyItemRemoved(position);
 
+
                 }
             });
         }
+
     }
+
+
 }

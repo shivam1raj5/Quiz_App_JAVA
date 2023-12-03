@@ -1,35 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    android:elevation="3dp"
+    android:background="@drawable/bookmark_bg"
     android:orientation="vertical"
     android:padding="16dp"
-    android:layout_margin="4dp"
-    android:background="@drawable/category_bg"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    app:circularflow_defaultRadius="20dp"
+    app:circularflow_radiusInDP="20dp">
+
 
     <TextView
         android:id="@+id/question"
-        android:padding="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-       android:textColor="@android:color/black"
-        android:text="@string/question"/>
+        android:padding="8dp"
+        android:text="question"
+        android:textColor="@color/black"
+        android:textSize="18dp" />
+
+
     <TextView
         android:id="@+id/answer"
-        android:padding="8dp"
-        android:textColor="@android:color/black"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/answer"/>
+        android:padding="8dp"
+        android:text="answer"
+        android:textColor="@color/black"
+        android:textSize="16sp" />
 
     <ImageButton
         android:id="@+id/delete_btn"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:padding="8dp"
+        android:layout_height="wrap_content"
         android:background="@android:color/transparent"
-        android:contentDescription="Enter How Much Cookies You Want"
-        android:src="@drawable/delete"/>
+        android:padding="8dp"
+        android:src="@drawable/delete" />
 
 </LinearLayout>
