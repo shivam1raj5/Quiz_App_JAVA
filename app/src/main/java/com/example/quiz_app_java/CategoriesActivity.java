@@ -39,7 +39,6 @@ public class CategoriesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_categories);
         Toolbar toolbar = findViewById(R.id.toolbar);
 
-//        loadAds();
 
         setSupportActionBar(toolbar);
         getSupportActionBar().setTitle("Categories");
